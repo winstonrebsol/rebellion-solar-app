@@ -399,7 +399,7 @@ function photoSlotHTML(key,label){
   <div class="photo-slot">
     <h3>${label}</h3>
     ${p ? `<img src="${p.dataUrl}">` : `<div class="placeholder">No photo yet</div>`}
-    <input type="file" accept="image/*" capture="environment" style="display:none" id="file-${key}">
+    <input type="file" accept="image/*" style="display:none" id="file-${key}">
     <button class="btn btn-yellow" data-take="${key}">${p?'Retake photo':'Take / upload photo'}</button>
   </div>`;
 }
