@@ -419,6 +419,7 @@ function renderPhotosTab(){
     ${photoSlotHTML('mdp','Picture of Main Distribution Panel')}
     ${photoSlotHTML('house','Picture of the Site/House')}
     ${photoSlotHTML('roof','Picture of the Roof')}
+    ${photoSlotHTML('bill','Picture of Electric Bill')}
   </div>`;
 }
 
@@ -465,7 +466,7 @@ function bindEvents(){
     });
   }
   if(activeTab===4){
-    ['mdp','house','roof'].forEach(key=>{
+    ['mdp','house','roof','bill'].forEach(key=>
       const btn = document.querySelector(`[data-take="${key}"]`);
       const input = document.getElementById(`file-${key}`);
       if(btn) btn.addEventListener('click', ()=> input.click());
