@@ -409,7 +409,7 @@ function renderPhotosTab(){
   <div class="card">
     <h2>Photos</h2>
     <p class="hint">Each photo becomes its own page in the Word document.</p>
-    ${photoSlotHTML('meter','Picture of Electric Meter')}
+    ${photoSlotHTML('mdp','Picture of Main Distribution Panel')}
     ${photoSlotHTML('house','Picture of the Site/House')}
     ${photoSlotHTML('roof','Picture of the Roof')}
   </div>`;
@@ -458,7 +458,7 @@ function bindEvents(){
     });
   }
   if(activeTab===4){
-    ['meter','house','roof'].forEach(key=>{
+    ['mdp','house','roof'].forEach(key=>{
       const btn = document.querySelector(`[data-take="${key}"]`);
       const input = document.getElementById(`file-${key}`);
       if(btn) btn.addEventListener('click', ()=> input.click());
