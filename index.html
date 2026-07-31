@@ -271,8 +271,12 @@ function renderTabs(){
 function fieldHTML(id,label,value,type,opts){
   opts = opts||{};
   if(type==="textarea"){
-    return `<div class="field"><label>${label}</label><textarea id="${id}" placeholder="${opts.placeholder||''}">${esc(value)}</textarea></div>`;
-  }
+  const rows = opts.rows || 5;
+  return `<div class="field">
+    <label>${label}</label>
+    <textarea id="${id}" rows="${rows}" placeholder="${opts.placeholder||''}">${esc(value)}</textarea>
+  </div>`;
+}
   return `<div class="field"><label>${label}</label><input type="${type||'text'}" id="${id}" value="${esc(value)}" placeholder="${opts.placeholder||''}"></div>`;
 }
 
@@ -389,7 +393,10 @@ function renderNotesTab(){
   <div class="card">
     <h2>Notes</h2>
     <p class="hint">Document Wi-Fi assessment, ground conditions, system calculations, site challenges, and any additional observations relevant to the installation.</p>
-    ${fieldHTML('notes','Notes',state.notes,'textarea',{placeholder:'Wi-Fi signal strength, ground conditions, site challenges, access notes, installation concerns, computation remarks, or any other observations...'})}
+    ${fieldHTML('notes','Notes',state.notes,'textarea',{
+  rows:15,
+  placeholder:'Wi-Fi signal strength, ground conditions, site challenges, access notes, installation concerns, computation remarks, or any other observations...'
+})}
   </div>`;
 }
 
