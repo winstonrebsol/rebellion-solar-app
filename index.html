@@ -466,7 +466,7 @@ function bindEvents(){
     });
   }
   if(activeTab===4){
-    ['mdp','house','roof','bill'].forEach(key=>
+    ['mdp','house','roof','bill'].forEach(key=>{
       const btn = document.querySelector(`[data-take="${key}"]`);
       const input = document.getElementById(`file-${key}`);
       if(btn) btn.addEventListener('click', ()=> input.click());
